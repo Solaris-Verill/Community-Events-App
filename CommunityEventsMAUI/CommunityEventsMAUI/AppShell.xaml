@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CommunityEventsMAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CommunityEventsMAUI"
+    xmlns:views="clr-namespace:CommunityEventsMAUI.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <Shell.FlyoutHeader>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+
+    <TabBar>
+        <Tab Title="DashBoard">
+            <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate views:DashBoardPage}"
+            Route="DashBoardPage" />
+        </Tab>
+        <Tab Title="Events">
+            <ShellContent
+            Title="Events"
+            ContentTemplate="{DataTemplate views:EventPage}"
+            Route="EventPage" />
+        </Tab>
+        <Tab>
+            
+        </Tab>
+    </TabBar>
+    <FlyoutItem Title="Profile">
+        <ShellContent
+        Title="Profile"
+        ContentTemplate="{DataTemplate views:ProfilePage}"
+        Route="ProfilePage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate views:SettingsPage}"
+        Route="Settings" />
+    </FlyoutItem>
+    
+    
+    
+
+</Shell>
