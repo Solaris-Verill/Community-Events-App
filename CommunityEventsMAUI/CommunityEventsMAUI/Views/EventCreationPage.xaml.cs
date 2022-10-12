@@ -1,8 +1,8 @@
 namespace CommunityEventsMAUI.Views;
 
-public partial class NewPage1 : ContentPage
+public partial class EventCreationPage : ContentPage
 {
-	public NewPage1()
+	public EventCreationPage()
 	{
 		InitializeComponent();
 	}

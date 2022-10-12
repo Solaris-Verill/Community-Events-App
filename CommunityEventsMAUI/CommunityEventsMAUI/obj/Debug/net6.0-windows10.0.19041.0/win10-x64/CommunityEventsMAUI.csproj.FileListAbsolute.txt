@@ -343,3 +343,6 @@ C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsM
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\IdentityModel.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\IdentityModel.OidcClient.dll

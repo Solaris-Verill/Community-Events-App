@@ -21,12 +21,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.AppShe
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
-[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
 [C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Resources.Styles.Colors.xaml
@@ -38,12 +32,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
-
-[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/DashBoardPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.DashBoardPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\DashBoardPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\DashBoardPage.xaml
 
 [C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/EventCreationPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -62,6 +50,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.EventPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\EventPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\EventPage.xaml
+
+[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\HomePage.xaml
 
 [C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-10-07T12:38:52.134</Modified>
+      <Modified>2022-10-12T13:28:30.313</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-10-07T12:38:51.538</Modified>
+      <Modified>2022-10-12T13:28:30.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\CommunityEventsMAUI.runtimeconfig.json">
       <PackagePath>CommunityEventsMAUI.runtimeconfig.json</PackagePath>
-      <Modified>2022-10-06T13:04:38.257</Modified>
+      <Modified>2022-10-12T13:19:43.954</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\CommunityEventsMAUI.dll">
       <PackagePath>CommunityEventsMAUI.dll</PackagePath>
-      <Modified>2022-10-07T12:38:49.205</Modified>
+      <Modified>2022-10-12T13:28:29.276</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>CommunityEventsMAUI.exe</PackagePath>
-      <Modified>2022-10-07T12:38:49.240</Modified>
+      <Modified>2022-10-12T13:28:29.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.9\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -965,6 +965,18 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2022-08-17T03:26:26.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Solar\.nuget\packages\communitytoolkit.mvvm\8.0.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+      <Modified>2022-08-03T23:09:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Solar\.nuget\packages\identitymodel\5.2.0\lib\net5.0\IdentityModel.dll">
+      <PackagePath>IdentityModel.dll</PackagePath>
+      <Modified>2021-10-15T06:59:10.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Solar\.nuget\packages\identitymodel.oidcclient\5.1.0\lib\netstandard2.0\IdentityModel.OidcClient.dll">
+      <PackagePath>IdentityModel.OidcClient.dll</PackagePath>
+      <Modified>2022-10-10T13:49:23.001</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\.nuget\packages\microsoft.extensions.configuration\6.0.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
       <Modified>2022-02-24T00:12:18.000</Modified>
@@ -1063,7 +1075,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\CommunityEventsMAUI.deps.json">
       <PackagePath>CommunityEventsMAUI.deps.json</PackagePath>
-      <Modified>2022-10-07T12:38:51.896</Modified>
+      <Modified>2022-10-12T13:28:30.208</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\6.0.536\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

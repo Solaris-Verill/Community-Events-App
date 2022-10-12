@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommunityEventsMAUI.ViewModels
 {
-    internal class DashBoardPageModel
+    public class EventInfoPageModel
     {
     }
 }

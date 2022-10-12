@@ -18,13 +18,18 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-
-    <TabBar>
-        <Tab Title="DashBoard">
+    <FlyoutItem Title="Home">
+        <Tab Title="Dashboard">
             <ShellContent
             Title="Dashboard"
-            ContentTemplate="{DataTemplate views:DashBoardPage}"
-            Route="DashBoardPage" />
+            ContentTemplate="{DataTemplate views:HomePage}"
+            Route="Dashboard" />
+        </Tab>
+        <Tab Title="Create">
+            <ShellContent
+            Title="Create"
+            ContentTemplate="{DataTemplate views:EventCreationPage}"
+            Route="Create" />
         </Tab>
         <Tab Title="Events">
             <ShellContent
@@ -32,10 +37,7 @@
             ContentTemplate="{DataTemplate views:EventPage}"
             Route="EventPage" />
         </Tab>
-        <Tab>
-            
-        </Tab>
-    </TabBar>
+    </FlyoutItem>
     <FlyoutItem Title="Profile">
         <ShellContent
         Title="Profile"
@@ -48,8 +50,6 @@
         ContentTemplate="{DataTemplate views:SettingsPage}"
         Route="Settings" />
     </FlyoutItem>
-    
-    
-    
+
 
 </Shell>
