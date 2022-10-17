@@ -13,8 +13,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
-            <Image />
         </Grid>
     </Shell.FlyoutHeader>
 
@@ -52,4 +50,9 @@
     </FlyoutItem>
 
 
+    <ShellContent
+        Shell.NavBarIsVisible="True"
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="HomePage" />
 </Shell>

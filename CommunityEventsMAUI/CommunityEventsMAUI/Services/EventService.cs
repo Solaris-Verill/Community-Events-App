@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http.Json;
-using CommunityEventsMAUI.Models;
+﻿using System.Net.Http.Json;
 
 namespace CommunityEventsMAUI.Services
 {
@@ -13,23 +7,27 @@ namespace CommunityEventsMAUI.Services
         HttpClient httpClient;
         public EventService()
         {
-            this.httpClient = new HttpClient();
+            httpClient = new HttpClient();
         }
 
-        List<Events> eventsList;
+        List<Events> eventList = new List<Events>();
+
         public async Task<List<Events>> GetEvents()
         {
-            if (eventsList.Count > 0)
+            if(eventList?.Count > 0)
             {
-                return eventsList;
+                return eventList;
             }
 
-            var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
+            var url = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/MonkeysApp/monkeydata.json";
+            var response = await httpClient.GetAsync(url);
+
             if (response.IsSuccessStatusCode)
             {
-                eventsList = await response.Content.ReadFromJsonAsync<List<Events>>();
+                eventList = await response.Content.ReadFromJsonAsync<List<Events>>();
             }
-            return eventsList;
+
+            return null;
         }
     }
 }
