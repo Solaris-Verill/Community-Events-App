@@ -1,9 +1,13 @@
-﻿namespace CommunityEventsMAUI;
+﻿
+
+namespace CommunityEventsMAUI;
 
 public partial class AppShell : Shell
 {
 	public AppShell()
 	{
 		InitializeComponent();
+
+		Routing.RegisterRoute(nameof(EventInfoPage), typeof(EventInfoPage));
 	}
 }

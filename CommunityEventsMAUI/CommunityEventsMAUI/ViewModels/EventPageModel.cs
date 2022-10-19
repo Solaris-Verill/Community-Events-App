@@ -1,4 +1,5 @@
 ﻿using CommunityEventsMAUI.Services;
+using CommunityEventsMAUI.Views;
 
 namespace CommunityEventsMAUI.ViewModels
 {
@@ -12,6 +13,20 @@ namespace CommunityEventsMAUI.ViewModels
         {
             Title = "Events";
             this.eventService = eventService;
+        }
+
+        [RelayCommand]
+        async Task GoToDetailsAsync(Events events)
+        {
+            if (events == null)
+            {
+                return;
+            }
+
+            await Shell.Current.GoToAsync($"{nameof(EventInfoPage)}" , true, new Dictionary<string, object>
+            {
+                {"Events", events }
+            });
         }
 
         [RelayCommand]
@@ -40,7 +55,7 @@ namespace CommunityEventsMAUI.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
+                await Shell.Current.DisplayAlert("Error!", $"Unable to Access Events: {ex}", "OK");
             }
             finally
             {

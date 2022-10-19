@@ -1,5 +1,9 @@
-﻿using CommunityEventsMAUI.ViewModels;
+﻿using CommunityEventsMAUI.Services;
+using CommunityEventsMAUI.ViewModels;
 using CommunityEventsMAUI.Views;
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Devices;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace CommunityEventsMAUI;
 
@@ -20,8 +24,10 @@ public static class MauiProgram
         builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
         builder.Services.AddSingleton<IMap>(Map.Default);
 
+		builder.Services.AddSingleton<EventService>();
+
         builder.Services.AddSingleton<EventCreationPage>();
-		builder.Services.AddSingleton<EventInfoPage>();
+		builder.Services.AddTransient<EventInfoPage>();
 		builder.Services.AddSingleton<EventPage>();
 		builder.Services.AddSingleton<HomePage>();
 		builder.Services.AddSingleton<LoginPage>();
@@ -37,6 +43,7 @@ public static class MauiProgram
         builder.Services.AddTransient<SettingsPageModel>();
 
         return builder.Build();
+
 	}
 }
 // a person with experience is never at the mercy to a person as a theory - Mentor of Sekol's

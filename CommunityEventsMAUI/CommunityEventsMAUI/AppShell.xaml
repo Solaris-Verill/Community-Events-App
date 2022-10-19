@@ -52,7 +52,7 @@
 
     <ShellContent
         Shell.NavBarIsVisible="True"
-        Title="Dashboard"
+        Title="Home"
         ContentTemplate="{DataTemplate views:HomePage}"
         Route="HomePage" />
 </Shell>

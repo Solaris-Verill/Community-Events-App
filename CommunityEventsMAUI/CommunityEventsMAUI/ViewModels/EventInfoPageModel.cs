@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace CommunityEventsMAUI.ViewModels
 {
-    public class EventInfoPageModel
+    [QueryProperty("Events","Events")]
+
+    public partial class EventInfoPageModel : BaseViewModel
     {
+        public EventInfoPageModel()
+        {
+
+        }
+
+        [ObservableProperty]
+        Events events; 
     }
 }

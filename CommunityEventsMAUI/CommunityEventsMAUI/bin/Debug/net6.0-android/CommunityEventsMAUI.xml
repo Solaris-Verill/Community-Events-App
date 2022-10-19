@@ -10,5 +10,20 @@
         <member name="P:CommunityEventsMAUI.ViewModels.BaseViewModel.Title">
             <inheritdoc cref="F:CommunityEventsMAUI.ViewModels.BaseViewModel.title"/>
         </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.Events">
+            <inheritdoc cref="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.events"/>
+        </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.EventPageModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.EventPageModel.GoToDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.EventPageModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.EventPageModel.GoToDetailsAsync(CommunityEventsMAUI.Models.Events)"/>.</summary>
+        </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.EventPageModel.getEventsCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.EventPageModel.GetEventsCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.EventPageModel.GetEventsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.EventPageModel.GetEventsAsync"/>.</summary>
+        </member>
     </members>
 </doc>

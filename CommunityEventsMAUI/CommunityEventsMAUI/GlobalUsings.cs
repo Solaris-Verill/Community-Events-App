@@ -1,6 +1,7 @@
 ﻿global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 global using CommunityEventsMAUI.ViewModels;
+global using CommunityEventsMAUI.Views;
 global using CommunityEventsMAUI.Models;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;

@@ -951,6 +951,16 @@ C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsM
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\IdentityModel.dll
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\IdentityModel.OidcClient.dll
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\IdentityModel.pdb
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\FireSharp.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\Microsoft.Threading.Tasks.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\Newtonsoft.Json.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\System.Net.Http.Extensions.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\System.Net.Http.Primitives.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\Firebase.Auth.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\Firebase.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\LiteDB.dll
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\System.Reactive.dll
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\mscorlib.dll
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\System.Collections.Concurrent.dll
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-android\android\assets\System.Data.dll
