@@ -1,9 +1,12 @@
+using CommunityEventsMAUI.ViewModels;
+
 namespace CommunityEventsMAUI.Views;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+	public LoginPage(LoginPageModel viewmodel)
 	{
 		InitializeComponent();
+		BindingContext = viewmodel;
 	}
 }

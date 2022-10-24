@@ -13,6 +13,12 @@
         <member name="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.Events">
             <inheritdoc cref="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.events"/>
         </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.openMapCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.OpenMapCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.OpenMapCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.EventInfoPageModel.OpenMap"/>.</summary>
+        </member>
         <member name="F:CommunityEventsMAUI.ViewModels.EventPageModel.goToDetailsCommand">
             <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.EventPageModel.GoToDetailsCommand"/>.</summary>
         </member>
@@ -24,6 +30,24 @@
         </member>
         <member name="P:CommunityEventsMAUI.ViewModels.EventPageModel.GetEventsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.EventPageModel.GetEventsAsync"/>.</summary>
+        </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.LoginPageModel.loginBtnTappedAsyncCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.LoginPageModel.LoginBtnTappedAsyncCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.LoginPageModel.LoginBtnTappedAsyncCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.LoginPageModel.LoginBtnTappedAsync(System.Object)"/>.</summary>
+        </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.LoginPageModel.registerBtnTappedCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.LoginPageModel.RegisterBtnTappedCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.LoginPageModel.RegisterBtnTappedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.LoginPageModel.RegisterBtnTappedAsync(CommunityEventsMAUI.Models.Events)"/>.</summary>
+        </member>
+        <member name="F:CommunityEventsMAUI.ViewModels.RegisterPageModel.registerUserTappedAsyncCommand">
+            <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.RegisterPageModel.RegisterUserTappedAsyncCommand"/>.</summary>
+        </member>
+        <member name="P:CommunityEventsMAUI.ViewModels.RegisterPageModel.RegisterUserTappedAsyncCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:CommunityEventsMAUI.ViewModels.RegisterPageModel.RegisterUserTappedAsync(System.Object)"/>.</summary>
         </member>
     </members>
 </doc>

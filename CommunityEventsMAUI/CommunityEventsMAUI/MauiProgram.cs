@@ -11,6 +11,10 @@ public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
+		var window = new Window();
+		window.Page = new HomePage();
+
+
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
@@ -19,6 +23,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
 
         builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
         builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
@@ -32,6 +37,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<HomePage>();
 		builder.Services.AddSingleton<LoginPage>();
 		builder.Services.AddSingleton<ProfilePage>();
+		builder.Services.AddTransient<RegisterPage>();
 		builder.Services.AddSingleton<SettingsPage>();
 
 		builder.Services.AddTransient<HomePageModel>();
@@ -40,6 +46,7 @@ public static class MauiProgram
         builder.Services.AddTransient<EventPageModel>();
         builder.Services.AddTransient<LoginPageModel>();
         builder.Services.AddTransient<ProfilePageModel>();
+		builder.Services.AddTransient<RegisterPageModel>();
         builder.Services.AddTransient<SettingsPageModel>();
 
         return builder.Build();

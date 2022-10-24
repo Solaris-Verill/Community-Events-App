@@ -5,54 +5,54 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CommunityEventsMAUI"
     xmlns:views="clr-namespace:CommunityEventsMAUI.Views"
-    Shell.FlyoutBehavior="Flyout">
+    FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="True">
 
     <Shell.FlyoutHeader>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Grid
+            RowDefinitions="*,*,*,*"
+            ColumnDefinitions="*,*">
         </Grid>
     </Shell.FlyoutHeader>
+    
+    <ShellContent 
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.TabBarIsVisible="False"
+        Route="Login"/>
 
-    <FlyoutItem Title="Home">
-        <Tab Title="Dashboard">
+    <FlyoutItem Title="Home" Grid.Row="1" Route="HomePage" FlyoutDisplayOptions="AsSingleItem">
+        <Tab Title="Dashboard" FlyoutDisplayOptions="AsMultipleItems">
             <ShellContent
             Title="Dashboard"
             ContentTemplate="{DataTemplate views:HomePage}"
             Route="Dashboard" />
         </Tab>
-        <Tab Title="Create">
+        <Tab Title="Create" FlyoutDisplayOptions="AsSingleItem">
             <ShellContent
             Title="Create"
             ContentTemplate="{DataTemplate views:EventCreationPage}"
             Route="Create" />
         </Tab>
-        <Tab Title="Events">
+        <Tab Title="Events" FlyoutDisplayOptions="AsSingleItem">
             <ShellContent
             Title="Events"
             ContentTemplate="{DataTemplate views:EventPage}"
             Route="EventPage" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Profile">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
         Title="Profile"
         ContentTemplate="{DataTemplate views:ProfilePage}"
         Route="ProfilePage" />
     </FlyoutItem>
-    <FlyoutItem Title="Settings">
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
         Title="Settings"
         ContentTemplate="{DataTemplate views:SettingsPage}"
         Route="Settings" />
     </FlyoutItem>
-
-
-    <ShellContent
-        Shell.NavBarIsVisible="True"
-        Title="Home"
-        ContentTemplate="{DataTemplate views:HomePage}"
-        Route="HomePage" />
 </Shell>
