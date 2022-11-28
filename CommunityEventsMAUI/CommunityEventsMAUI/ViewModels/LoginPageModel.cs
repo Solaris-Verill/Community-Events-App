@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 
 namespace CommunityEventsMAUI.ViewModels
 {
-    public partial class LoginPageModel
+    public partial class LoginPageModel : Auth
     {
         public string webApiKey = "AIzaSyBNKQZYQthu5ucaviE21YffjNpDBBT3lII";
         private string userName;
         private string userPassword;
+        public string Uid;
+        //public string Uid = auth.User.LocalId;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -42,7 +44,7 @@ namespace CommunityEventsMAUI.ViewModels
         [RelayCommand]
         private async void LoginBtnTappedAsync(object obj)
         {
-            if(!string.IsNullOrEmpty(UserName) && !string.IsNullOrWhiteSpace(UserPassword))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrWhiteSpace(UserPassword))
             {
                 var authProvider = new FirebaseAuthProvider(new FirebaseConfig(webApiKey));
                 try
@@ -50,17 +52,34 @@ namespace CommunityEventsMAUI.ViewModels
                     userName = userName.ToLower();
                     var auth = await authProvider.SignInWithEmailAndPasswordAsync(UserName, UserPassword);
                     var content = await auth.GetFreshAuthAsync();
+                    Uid = auth.User.LocalId;
+                    Userid = Uid;
+                    Token = auth.FirebaseToken;
+                    ReturnUID();
+                    ReturnToken();
                     var serializedContent = JsonConvert.SerializeObject(content);
                     Preferences.Set("FreshFirebaseToken", serializedContent);
                     await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                 }
-                catch
+                catch (Exception ex)
                 {
-                    await Shell.Current.DisplayAlert("Error!", $"Invalid Email Or Password", "OK");
+                    await Shell.Current.DisplayAlert("Error!", $"Invalid Username or Password.", "OK");
+
                 }
             }
 
+            Trace.WriteLine($"4:{Userid}");
+            return;
+        }
 
+        private string ReturnUID()
+        {
+            return Userid;      
+        }
+
+        private string ReturnToken()
+        {
+            return Token;
         }
 
         [RelayCommand]

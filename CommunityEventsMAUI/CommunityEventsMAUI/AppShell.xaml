@@ -33,7 +33,7 @@
         <Tab Title="Create" FlyoutDisplayOptions="AsSingleItem">
             <ShellContent
             Title="Create"
-            ContentTemplate="{DataTemplate views:EventCreationPage}"
+            ContentTemplate="{DataTemplate views:UserEvents}"
             Route="Create" />
         </Tab>
         <Tab Title="Events" FlyoutDisplayOptions="AsSingleItem">

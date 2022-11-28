@@ -1,10 +1,14 @@
-﻿
+﻿using FireSharp;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+
 namespace CommunityEventsMAUI.ViewModels
 {
-    [QueryProperty(nameof(Events),"Events")]
+    [QueryProperty(nameof(Events), "Events")]
 
     public partial class EventInfoPageModel : BaseViewModel
     {
+        public Events selectedEvent;
 
         IMap map;
         public EventInfoPageModel(IMap map)
@@ -15,21 +19,43 @@ namespace CommunityEventsMAUI.ViewModels
         [ObservableProperty]
         Events events;
 
-        [RelayCommand]
-        async Task OpenMap()
+        [ObservableProperty]
+        Users user;
+
+        public IFirebaseConfig ifc = new FirebaseConfig()
+        {
+            AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
+            BasePath = "https://communityevents-128b1-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+
+        public void ConnectToFirebase()
         {
             try
             {
-                await map.OpenAsync(events.Latitude, events.Longitude, new MapLaunchOptions
-                {
-                    Name = events.Name,
-                    NavigationMode = NavigationMode.None
-                });
+                client = new FirebaseClient(ifc);
             }
-            catch (Exception ex)
+            catch
             {
-                Debug.WriteLine($"Unable to launch maps: {ex.Message}");
-                await Shell.Current.DisplayAlert("Error, no Maps app!", ex.Message, "OK");
+                Shell.Current.DisplayAlert("Error!", "Unable To Connect. Try Again Later", "OK");
+            }
+        }
+
+        [RelayCommand]
+        async void Favorite()
+        {
+            ConnectToFirebase();
+
+            try 
+            {
+                Users.Favorites.Add(new Favorites { favoriteNumber = events.EventNumb });
+
+                await client.UpdateAsync($"User/{Auth.Userid}/Favorites", Users.Favorites);
+            }
+            catch
+            {
+                Shell.Current.DisplayAlert("error", "please Try again", "OK");
             }
         }
     }

@@ -52,15 +52,15 @@ namespace CommunityEventsMAUI.Services
 
         List<Events> eventList = new();
 
-        public  Task<List<Events>> GetEvents()
+        public async Task<List<Events>> GetEvents()
         {
             ConnectToFirebase();
 
             if (eventList?.Count > 0)
             {
-                return Task.FromResult(eventList);
+                eventList = new List<Events>();
             }
-            FirebaseResponse response = client.Get(@"Events");
+            FirebaseResponse response = await client.GetAsync(@"Events");
             Events[] result = response.ResultAs<Events[]>();
 
             foreach (var events in result)
@@ -69,35 +69,35 @@ namespace CommunityEventsMAUI.Services
             }
 
 
-            return Task.FromResult(eventList);
+            return await Task.FromResult(eventList);
         }
 
-/*
-        //MAUI Tutorial
-        HttpClient httpClient;
-        public EventService()
-        {
-            httpClient = new HttpClient();
-        }
+        /*
+                //MAUI Tutorial
+                HttpClient httpClient;
+                public EventService()
+                {
+                    httpClient = new HttpClient();
+                }
 
-        List<Events> eventList = new List<Events>();
+                List<Events> eventList = new List<Events>();
 
-        public async Task<List<Events>> GetEvents()
-        {
-            if (eventList?.Count > 0)
-            {
-                return eventList;
-            }
+                public async Task<List<Events>> GetEvents()
+                {
+                    if (eventList?.Count > 0)
+                    {
+                        return eventList;
+                    }
 
-            var url = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/MonkeysApp/monkeydata.json";
-            var response = await httpClient.GetAsync(url);
+                    var url = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/MonkeysApp/monkeydata.json";
+                    var response = await httpClient.GetAsync(url);
 
-            if (response.IsSuccessStatusCode)
-            {
-                eventList = await response.Content.ReadFromJsonAsync<List<Events>>();
-            }
+                    if (response.IsSuccessStatusCode)
+                    {
+                        eventList = await response.Content.ReadFromJsonAsync<List<Events>>();
+                    }
 
-            return null;
-        }*/
+                    return null;
+                }*/
     }
 }

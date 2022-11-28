@@ -4,6 +4,7 @@
              x:Class="CommunityEventsMAUI.Views.EventPage"
              xmlns:models="clr-namespace:CommunityEventsMAUI.Models"
              xmlns:viewmodel="clr-namespace:CommunityEventsMAUI.ViewModels"
+             NavigatedTo="ContentPage_NavigatedTo"
              x:DataType="viewmodel:EventPageModel"
              Title="Events">
     <Grid
@@ -59,6 +60,7 @@
             Style="{StaticResource ButtonOutline}"
             Text="Get Events"
             Grid.Row="1"
+            Grid.ColumnSpan="2"
             Margin="8"
             Command="{Binding GetEventsCommand}"
             IsEnabled="{Binding IsNotBusy}"/>

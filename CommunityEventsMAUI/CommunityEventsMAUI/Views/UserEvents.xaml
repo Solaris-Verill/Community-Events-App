@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CommunityEventsMAUI.Views.UserEvents"
+             xmlns:models="clr-namespace:CommunityEventsMAUI.Models"
+             xmlns:viewmodel="clr-namespace:CommunityEventsMAUI.ViewModels"             
+             x:DataType="viewmodel:UserEventsPageModel"
+             NavigatedTo="ContentPage_NavigatedTo"
+             Title="My Events">
+    <Grid
+        ColumnDefinitions="*,*"
+        ColumnSpacing="5"
+        RowDefinitions="*,Auto"
+        RowSpacing="0">
+
+        <CollectionView
+            BackgroundColor="Transparent"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding _Events}"
+            SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Events">
+                    <Grid Padding="10">
+                        <Frame HeightRequest="125"
+                               Padding="0"
+                               Style="{StaticResource CardView}">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}"
+                                                      Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:UserEventsPageModel}}, Path=GoToDetailsCommand}"/>
+                            </Frame.GestureRecognizers>
+                            <Grid
+                                Padding="0"
+                                ColumnDefinitions="125,*">
+                                
+                                <Image
+                                    Aspect="AspectFill"
+                                   Source="{Binding Image}"
+                                   WidthRequest="125"
+                                   HeightRequest="125"/>
+
+                                <VerticalStackLayout
+                                    Grid.Column="1"
+                                    Padding="10"
+                                    VerticalOptions="Center">
+
+                                    <Label Text="{Binding Name}"
+                                           Style="{StaticResource LargeLabel}"/>
+                                    <Label Text="{Binding Location}"
+                                           Style="{StaticResource MediumLabel}"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button 
+            Style="{StaticResource ButtonOutline}"
+            Text="Get Events"
+            Grid.Row="1"
+            Margin="8"
+            Command="{Binding GetEventsCommand}"
+            IsEnabled="{Binding IsNotBusy}"/>
+        <Button 
+            Style="{StaticResource ButtonOutline}"
+            Text="Create Event"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="8"
+            Command="{Binding CreateEventBtnTappedCommand}"
+            IsEnabled="{Binding IsNotBusy}"/>
+
+        <ActivityIndicator
+            IsVisible="{Binding IsBusy}"
+            IsRunning="{Binding IsBusy}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>

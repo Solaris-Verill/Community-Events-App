@@ -42,10 +42,7 @@ namespace CommunityEventsMAUI.ViewModels
                 IsBusy = true;
                 var _events = await eventService.GetEvents();
 
-                if(_Events.Count != 0)
-                {
-                    _Events.Clear();
-                }
+                _Events.Clear();
 
                 foreach(var _event in _events)
                 {
@@ -55,7 +52,37 @@ namespace CommunityEventsMAUI.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error!", $"Unable to Access Events: {ex}", "OK");
+                await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        public async Task GetEvents()
+        {
+            if (IsBusy)
+            {
+                return;
+            }
+
+            try
+            {
+                IsBusy = true;
+                var _events = await eventService.GetEvents();
+
+                _Events.Clear();
+
+                foreach (var _event in _events)
+                {
+                    _Events.Add(_event);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
             }
             finally
             {

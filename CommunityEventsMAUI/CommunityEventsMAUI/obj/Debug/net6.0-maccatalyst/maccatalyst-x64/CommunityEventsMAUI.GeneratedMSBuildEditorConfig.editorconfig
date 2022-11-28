@@ -80,3 +80,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.SettingsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\SettingsPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\SettingsPage.xaml
+
+[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/UserEventInfo.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.UserEventInfo.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UserEventInfo.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UserEventInfo.xaml
+
+[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/UserEvents.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.UserEvents.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UserEvents.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UserEvents.xaml
