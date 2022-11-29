@@ -57,12 +57,11 @@ namespace CommunityEventsMAUI.Services
             try
             {
                 FirebaseResponse response = await client.GetAsync(@$"User/{Auth.Userid}/Favorites");
-                
-                Favorites[] result = response.ResultAs<Favorites[]>();
+                Events[] result = response.ResultAs<Events[]>();
 
-                foreach ( var favorite in result)
+                foreach (var people in result)
                 {
-
+                    eventsList.Add(people);
                 }
 
                 return await Task.FromResult(eventsList);

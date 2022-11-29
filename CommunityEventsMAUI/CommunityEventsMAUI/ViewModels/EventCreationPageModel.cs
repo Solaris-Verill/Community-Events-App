@@ -9,11 +9,9 @@ using FireSharp;
 using FireSharp.Interfaces;
 using GoogleMaps.LocationServices;
 using FireSharp.Response;
-using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace CommunityEventsMAUI.ViewModels
 {
-    [QueryProperty(nameof(Users), "Users")]
     public partial class EventCreationPageModel : Auth
     {
         private string details;
@@ -38,6 +36,7 @@ namespace CommunityEventsMAUI.ViewModels
         public string downloadUrl;
         public string location;
         public int numEvents;
+
 
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
@@ -138,10 +137,7 @@ namespace CommunityEventsMAUI.ViewModels
                         EventNumb = numEvents
                     };
 
-                    List<int> myEvents = Users.Events;
-                    myEvents.Add(numEvents);
-
-                    await client.UpdateAsync($"User/{Userid}/Events", myEvents);
+                    await client.UpdateAsync($"User/{Userid}/Events/{numEvents}", events);
                     await client.UpdateAsync($"Events/{numEvents}", events);
                 }
                 finally

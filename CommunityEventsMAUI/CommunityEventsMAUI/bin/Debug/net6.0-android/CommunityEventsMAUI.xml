@@ -25,9 +25,6 @@
         <member name="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.Events">
             <inheritdoc cref="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.events"/>
         </member>
-        <member name="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.User">
-            <inheritdoc cref="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.user"/>
-        </member>
         <member name="F:CommunityEventsMAUI.ViewModels.EventInfoPageModel.favoriteCommand">
             <summary>The backing field for <see cref="P:CommunityEventsMAUI.ViewModels.EventInfoPageModel.FavoriteCommand"/>.</summary>
         </member>

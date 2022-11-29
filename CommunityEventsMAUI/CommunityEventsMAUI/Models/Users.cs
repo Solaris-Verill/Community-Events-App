@@ -10,7 +10,7 @@ namespace CommunityEventsMAUI.Models
     {
         public string Username { get; set; }
         public string Role { get; set; }
-        static public List<Favorites> Favorites;
-        static public List<int> Events;
+        static public List<Events> Favorites;
+        static public List<Events> Events;
     }
 }

@@ -19,9 +19,6 @@ namespace CommunityEventsMAUI.ViewModels
         [ObservableProperty]
         Events events;
 
-        [ObservableProperty]
-        Users user;
-
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
@@ -47,11 +44,23 @@ namespace CommunityEventsMAUI.ViewModels
         {
             ConnectToFirebase();
 
-            try 
-            {
-                Users.Favorites.Add(new Favorites { favoriteNumber = events.EventNumb });
 
-                await client.UpdateAsync($"User/{Auth.Userid}/Favorites", Users.Favorites);
+
+            try 
+            { 
+                Events Event = new Events()
+                {
+                    Details = events.Details,
+                    Image = events.Image,
+                    Name = events.Name,
+                    Location = events.Location,
+                    Date = events.Date,
+                    StartTime = events.StartTime,
+                    EndTime = events.EndTime,
+                    EventNumb = events.EventNumb
+                };
+
+                await client.SetAsync($"User/{Auth.Userid}/Favorites/{Events.EventNumb}", Event);
             }
             catch
             {
