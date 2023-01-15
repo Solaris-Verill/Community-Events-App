@@ -6,7 +6,7 @@
              x:Class="CommunityEventsMAUI.Views.EventInfoPage"
              Title="{Binding Events.Name}"
              x:DataType="viewmodels:EventInfoPageModel">
-    <ScrollView BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+    <ScrollView BackgroundColor="{AppThemeBinding Light={StaticResource DarkBackground}, Dark={StaticResource DarkBackground}}">
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160, Auto">
                 <BoxView
@@ -36,11 +36,20 @@
             <VerticalStackLayout Padding="10" Spacing="10">
                 <!-- Add this -->
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding Events.Details}" />
-                <Label Style="{StaticResource SmallLabel}" Text="{Binding Events.Location, StringFormat='Location: {0}'}" />
+                <Label Style="{StaticResource SmallLabel}">
+                    <Label.Text>
+                        <MultiBinding StringFormat="Location: {0} {1} {2}">
+                            <Binding Path="Events.Address" />
+                            <Binding Path="Events.City" />
+                            <Binding Path="Events.State" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Style="{StaticResource SmallLabel}" Text="{Binding Events.Date, StringFormat='Date: {0}'}" />
                 <Label Style="{StaticResource SmallLabel}" Text="{Binding Events.StartTime, StringFormat='Start Time: {0}'}" />
                 <Label Style="{StaticResource SmallLabel}" Text="{Binding Events.EndTime, StringFormat='End Time: {0}'}" />
                 <Button 
+                    x:Name="btnFavorite"
                     Style="{StaticResource ButtonOutline}"
                     Text="Favorite"
                     Grid.Row="1"

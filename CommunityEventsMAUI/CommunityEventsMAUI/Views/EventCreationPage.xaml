@@ -4,6 +4,7 @@
              x:Class="CommunityEventsMAUI.Views.EventCreationPage"
              xmlns:viewmodels="clr-namespace:CommunityEventsMAUI.ViewModels"
              x:DataType="viewmodels:EventCreationPageModel"
+             NavigatedTo="ContentPage_NavigatedTo"
              Title="Event Creation">
     <ContentPage.Content>
         <ScrollView>
@@ -42,55 +43,79 @@
                         Grid.Row="1"
                         Grid.ColumnSpan="2"
                         Margin="0,20,0,0"
+                        x:Name="TitleEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="Event Title"
                         Text="{Binding Title}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="2"
                         Grid.ColumnSpan="2"
+                        x:Name="DetailsEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="Description"
                         Text="{Binding Details}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="3"
                         Grid.ColumnSpan="2"
+                        x:Name="AddressEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="Address Of Event"
                         Text="{Binding Address}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="4"
                         Grid.ColumnSpan="2"
+                        x:Name="CityEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="City of Event"
                         Text="{Binding City}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="5"
                         Grid.ColumnSpan="2"
+                        x:Name="StateEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="State Event is Located"
                         Text="{Binding State}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="6"
                         Grid.ColumnSpan="2"
+                        x:Name="StartTimeEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="Start Time"
                         Text="{Binding StartTime}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="6"
                         Grid.Column="1"
+                        x:Name="EndTimeEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="End Time"
                         Text="{Binding EndTime}"
                         VerticalOptions="FillAndExpand" />
                     <Entry
                         Grid.Row="7"
+                        x:Name="DateEntry"
                         HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
                         Placeholder="Date"
                         Text="{Binding Date}"
                         VerticalOptions="FillAndExpand" />

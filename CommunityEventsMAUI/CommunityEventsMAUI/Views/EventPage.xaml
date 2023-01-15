@@ -14,9 +14,10 @@
         RowSpacing="0">
 
         <CollectionView
+            x:Name="CollectionOfEvents"
             BackgroundColor="Transparent"
             Grid.ColumnSpan="2"
-            ItemsSource="{Binding _Events}"
+            ItemsSource="{Binding eventsList}"
             SelectionMode="None">
 
             <CollectionView.ItemTemplate>
@@ -46,8 +47,15 @@
 
                                     <Label Text="{Binding Name}"
                                            Style="{StaticResource LargeLabel}"/>
-                                    <Label Text="{Binding Location}"
-                                           Style="{StaticResource MediumLabel}"/>
+                                    <Label Style="{StaticResource MediumLabel}">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="{}{0} {1} {2} ">
+                                                <Binding Path="Address" />
+                                                <Binding Path="City" />
+                                                <Binding Path="State" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
                                 </VerticalStackLayout>
                             </Grid>
                         </Frame>

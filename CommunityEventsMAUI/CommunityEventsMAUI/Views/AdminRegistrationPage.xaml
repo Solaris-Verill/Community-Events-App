@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CommunityEventsMAUI.Views.AdminRegistrationPage"
+             xmlns:viewmodels="clr-namespace:CommunityEventsMAUI.ViewModels"
+             x:DataType="viewmodels:AdminRegistrationPageModel"
+             Shell.TabBarIsVisible="False"
+             Title="Admin Registration">
+    <Grid
+        Padding="20,50,20,0"
+        HorizontalOptions="FillAndExpand"
+        RowSpacing="20"
+        VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            FontAttributes="Bold"
+            FontSize="24"
+            HorizontalOptions="CenterAndExpand"
+            Text="Registration"
+            TextColor="White" />
+        <Label
+            Grid.Row="1"
+            Margin="0,-15,0,0"
+            HorizontalOptions="CenterAndExpand"
+            Text="Register With Email"
+            TextColor="White" />
+        <Entry
+            Grid.Row="2"
+            Margin="0,20,0,0"
+            HorizontalOptions="FillAndExpand"
+            Placeholder="Email"
+            PlaceholderColor="Grey"
+            TextColor="WhiteSmoke"
+            Text="{Binding Email}"
+            VerticalOptions="FillAndExpand" />
+        <Entry
+            Grid.Row="3"
+            HorizontalOptions="FillAndExpand"
+            IsPassword="True"
+            Placeholder="Password"
+            PlaceholderColor="Grey"
+            TextColor="WhiteSmoke"
+            Text="{Binding Password}"
+            VerticalOptions="FillAndExpand" />
+        <Entry
+            Grid.Row="4"
+            HorizontalOptions="FillAndExpand"
+            IsPassword="True"
+            Placeholder="Admin Key"
+            PlaceholderColor="Grey"
+            TextColor="WhiteSmoke"
+            Text="{Binding AdminNumber}"
+            VerticalOptions="FillAndExpand" />
+        <Button
+            Grid.Row="5"
+            BackgroundColor="#1C375C"
+            Command="{Binding RegisterAdminTappedAsyncCommand}"
+            CornerRadius="20"
+            Text="Register" />
+    </Grid>
+</ContentPage>

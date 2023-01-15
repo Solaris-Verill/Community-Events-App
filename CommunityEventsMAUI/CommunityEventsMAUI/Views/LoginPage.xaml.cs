@@ -9,4 +9,10 @@ public partial class LoginPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewmodel;
 	}
+
+	private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+	{
+		etyUserName.Text = "";
+		etyPassword.Text = "";
+	}
 }

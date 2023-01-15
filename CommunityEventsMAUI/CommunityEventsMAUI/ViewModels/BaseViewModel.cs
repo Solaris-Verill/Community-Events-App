@@ -30,8 +30,6 @@ namespace CommunityEventsMAUI.ViewModels
         [ObservableProperty]
         string title;
 
-        public FavoriteService eventService;
-
         public bool IsNotBusy => !IsBusy;
     }
 }

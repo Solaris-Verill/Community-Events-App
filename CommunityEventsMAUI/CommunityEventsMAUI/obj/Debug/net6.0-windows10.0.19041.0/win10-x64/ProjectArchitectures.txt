@@ -1,1 +1,0 @@
-C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\CommunityEventsMAUI.csproj;x64

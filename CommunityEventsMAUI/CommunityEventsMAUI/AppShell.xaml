@@ -6,7 +6,31 @@
     xmlns:local="clr-namespace:CommunityEventsMAUI"
     xmlns:views="clr-namespace:CommunityEventsMAUI.Views"
     FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="{StaticResource CardBackgroundDark}"
     Shell.TabBarIsVisible="True">
+
+    <Shell.Resources>
+        <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="{StaticResource CardBackgroundDark}" />
+                                <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#1C375C" />
+                                <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </Shell.Resources>
 
     <Shell.FlyoutHeader>
         <Grid
@@ -14,36 +38,59 @@
             ColumnDefinitions="*,*">
         </Grid>
     </Shell.FlyoutHeader>
-    
-    <ShellContent 
-        Title="Login"
-        ContentTemplate="{DataTemplate views:LoginPage}"
-        FlyoutItemIsVisible="False"
-        Shell.FlyoutBehavior="Disabled"
-        Shell.TabBarIsVisible="False"
-        Route="Login"/>
 
-    <FlyoutItem Title="Home" Grid.Row="1" Route="HomePage" FlyoutDisplayOptions="AsSingleItem">
+    <FlyoutItem Title="Login" Route="LoginPage" FlyoutDisplayOptions="AsSingleItem" FlyoutItemIsVisible="False">
+        <Tab>
+            <ShellContent 
+                Title="Login"
+                ContentTemplate="{DataTemplate views:LoginPage}"
+                FlyoutItemIsVisible="False"
+                Shell.FlyoutBehavior="Disabled"
+                Shell.TabBarIsVisible="False"
+                Shell.FlyoutItemIsVisible="False"
+                Route="Login">
+        </ShellContent>
+        </Tab>
+        <Tab>
+            <ShellContent 
+            Title="Register"
+            ContentTemplate="{DataTemplate views:RegisterPage}"
+            Route="Register" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Home" Grid.Row="0" Route="HomePage" FlyoutDisplayOptions="AsSingleItem">
         <Tab Title="Dashboard" FlyoutDisplayOptions="AsMultipleItems">
             <ShellContent
-            Title="Dashboard"
-            ContentTemplate="{DataTemplate views:HomePage}"
-            Route="Dashboard" />
+                Title="Dashboard"
+                ContentTemplate="{DataTemplate views:HomePage}"
+                Route="Dashboard" />
         </Tab>
         <Tab Title="Create" FlyoutDisplayOptions="AsSingleItem">
             <ShellContent
-            Title="Create"
-            ContentTemplate="{DataTemplate views:UserEvents}"
-            Route="Create" />
+                Title="Create"
+                ContentTemplate="{DataTemplate views:UserEvents}"
+                Route="Create" />
         </Tab>
         <Tab Title="Events" FlyoutDisplayOptions="AsSingleItem">
             <ShellContent
-            Title="Events"
-            ContentTemplate="{DataTemplate views:EventPage}"
-            Route="EventPage" />
+                Title="Events"
+                ContentTemplate="{DataTemplate views:EventPage}"
+                Route="EventPage" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+    
+    <Shell.FlyoutFooter Grid.Row="1" FlyoutDisplayOptions="AsMultipleItems">
+        <StackLayout>
+            <Button
+                Style="{StaticResource ButtonOutline}"
+                Grid.Row="1"
+                Margin="8"
+                Text="Log Out"
+                Clicked="Button_Clicked"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
         Title="Profile"
         ContentTemplate="{DataTemplate views:ProfilePage}"
@@ -54,5 +101,5 @@
         Title="Settings"
         ContentTemplate="{DataTemplate views:SettingsPage}"
         Route="Settings" />
-    </FlyoutItem>
+    </FlyoutItem>-->
 </Shell>

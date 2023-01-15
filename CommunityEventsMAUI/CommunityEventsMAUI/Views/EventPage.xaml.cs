@@ -13,7 +13,9 @@ public partial class EventPage : ContentPage
 
 	private async void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
 	{
-        EventPageModel viewModel = (EventPageModel)BindingContext;
-        await viewModel.GetEvents();
-    }
+		EventPageModel viewModel = (EventPageModel)BindingContext;
+		await viewModel.GetEvents();
+		PageNavigatedFrom.navigatedFrom = "EventPage";
+		Trace.WriteLine(PageNavigatedFrom.navigatedFrom);
+	}
 }

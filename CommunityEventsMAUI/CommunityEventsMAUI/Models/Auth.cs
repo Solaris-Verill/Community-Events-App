@@ -10,5 +10,6 @@ namespace CommunityEventsMAUI.Models
     {
         public static string Userid { get; set; }
         public static string Token { get; set; }
+        public static string Role { get; set; }
     }
 }

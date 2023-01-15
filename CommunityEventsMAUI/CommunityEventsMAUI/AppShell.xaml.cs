@@ -1,4 +1,5 @@
-﻿using CommunityEventsMAUI.ViewModels;
+﻿using CommunityEventsMAUI.Services;
+using CommunityEventsMAUI.ViewModels;
 using CommunityEventsMAUI.Views;
 
 namespace CommunityEventsMAUI;
@@ -19,6 +20,13 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
 		Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
 		Routing.RegisterRoute(nameof(UserEventInfo), typeof(UserEventInfo));
-		Routing.RegisterRoute(nameof(UserEvents), typeof(UserEvents));
+		Routing.RegisterRoute(nameof(UserEvents), typeof(UserEvents)); 
+		Routing.RegisterRoute(nameof(EditEventPage), typeof(EditEventPage));
+		Routing.RegisterRoute(nameof(AdminRegistrationPage), typeof(AdminRegistrationPage));
+	}
+
+	private async void Button_Clicked(object sender, EventArgs e)
+	{
+		await LogOut.logOutAsync();
 	}
 }

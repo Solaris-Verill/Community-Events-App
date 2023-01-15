@@ -29,7 +29,11 @@ namespace CommunityEventsMAUI.Services
 
             return null;
         }*/
+
+
         //FireSharp Attempt
+
+        //Firebase Configuration so that the app can connect to the Firebase server
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
@@ -38,6 +42,7 @@ namespace CommunityEventsMAUI.Services
 
         IFirebaseClient client;
 
+        //Trys to connect and sets the firebase client to be used
         public void ConnectToFirebase()
         {
             try
@@ -46,58 +51,85 @@ namespace CommunityEventsMAUI.Services
             }
             catch
             {
-                Shell.Current.DisplayAlert("Error!", "Unable to Access Events1", "OK");
+                Shell.Current.DisplayAlert("Error!", "Unable To Connect. Try Again Later", "OK");
             }
         }
 
-        List<Events> eventList = new();
+        //Declaration Of Dictionaries
+        Dictionary<string, Events> eventsList = new();
+        Dictionary<string, Events> usereventsList = new();
+        Dictionary<string, Events> favoritesList = new();
 
-        public async Task<List<Events>> GetEvents()
+        //Gets all events for the event page, and all the events for admins in the user events page
+        public async Task<Dictionary<string, Events>> GetEvents()
         {
             ConnectToFirebase();
 
-            if (eventList?.Count > 0)
+            if (eventsList?.Count > 0)
             {
-                eventList = new List<Events>();
+                eventsList = new Dictionary<string, Events>();
             }
             FirebaseResponse response = await client.GetAsync(@"Events");
-            Events[] result = response.ResultAs<Events[]>();
+            Dictionary<string, Events> result = response.ResultAs<Dictionary<string, Events>>();
 
-            foreach (var events in result)
+            eventsList = result;
+
+            return await Task.FromResult(eventsList);
+        }
+        
+        //Gets all the users events for the user events page
+        public async Task<Dictionary<string, Events>> GetUserEvents()
+        {
+            ConnectToFirebase();
+
+            if (usereventsList?.Count > 0)
             {
-                eventList.Add(events);
+                usereventsList = new Dictionary<string, Events>();
             }
 
+            try
+            {
+                FirebaseResponse response = await client.GetAsync(@$"User/{Auth.Userid}/Events");
+                Dictionary<string, Events> result = response.ResultAs<Dictionary<string, Events>>();
 
-            return await Task.FromResult(eventList);
+                usereventsList = result;
+
+                return await Task.FromResult(usereventsList);
+            }
+            catch
+            {
+                Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
+
+                return await Task.FromResult(usereventsList);
+            }
         }
 
-        /*
-                //MAUI Tutorial
-                HttpClient httpClient;
-                public EventService()
-                {
-                    httpClient = new HttpClient();
-                }
+        //Gets all the users favorites for the home page
+        public async Task<Dictionary<string, Events>> GetFavorites()
+        {
+            ConnectToFirebase();
 
-                List<Events> eventList = new List<Events>();
+            if (favoritesList?.Count > 0)
+            {
+                favoritesList = new Dictionary<string, Events>();
+            }
 
-                public async Task<List<Events>> GetEvents()
-                {
-                    if (eventList?.Count > 0)
-                    {
-                        return eventList;
-                    }
+            try
+            {
+                FirebaseResponse response = await client.GetAsync(@$"User/{Auth.Userid}/Favorites");
 
-                    var url = "https://raw.githubusercontent.com/jamesmontemagno/app-monkeys/master/MonkeysApp/monkeydata.json";
-                    var response = await httpClient.GetAsync(url);
+                Dictionary<string, Events> result = response.ResultAs<Dictionary<string, Events>>();
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        eventList = await response.Content.ReadFromJsonAsync<List<Events>>();
-                    }
+                favoritesList = result;
 
-                    return null;
-                }*/
+                return await Task.FromResult(favoritesList);
+            }
+            catch
+            {
+                Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
+
+                return await Task.FromResult(favoritesList);
+            }
+        }
     }
 }

@@ -14,15 +14,17 @@ namespace CommunityEventsMAUI.ViewModels
 {
     public partial class EventCreationPageModel : Auth
     {
-        private string details;
-        private string title;
-        private string address;
-        private string city;
-        private string state;
-        private string startTime;
-        private string endTime;
-        private string date;
+        //Declaration of all user inputs for event
+        private string details = "";
+        private string title = "";
+        private string address = "";
+        private string city = "";
+        private string state = "";
+        private string startTime = "";
+        private string endTime = "";
+        private string date = "";
 
+        //Creates variables that the inputs of the page can get binded to
         public string Details { get => details; set => details = value; }
         public string Title { get => title; set => title = value; }
         public string Address { get => address; set => address = value; }
@@ -32,12 +34,13 @@ namespace CommunityEventsMAUI.ViewModels
         public string EndTime { get => endTime; set => endTime = value; }
         public string Date { get => date; set => date = value; }
 
+        //Other variable declarations
         public FileResult result;
         public string downloadUrl;
         public string location;
-        public int numEvents;
+        static public string GUiD;
 
-
+        //Firebase Configuration so that the app can connect to the Firebase server
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
@@ -46,6 +49,7 @@ namespace CommunityEventsMAUI.ViewModels
 
         IFirebaseClient client;
 
+        //Trys to connect and sets the firebase client to be used
         public void ConnectToFirebase()
         {
             try
@@ -58,6 +62,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
         }
 
+        //Allows a user to pick a image file from their device and upload it using firebase storage
         [RelayCommand]
         public async Task<FileResult> PickAndShow(PickOptions options)
         {
@@ -74,6 +79,7 @@ namespace CommunityEventsMAUI.ViewModels
                             AuthTokenAsyncFactory = () => Task.FromResult(Token),
                             ThrowOnCancel = true
                         })
+                        .Child(GUiD)
                         .Child(result.FileName)
                         .PutAsync(await result.OpenReadAsync());
 
@@ -90,65 +96,77 @@ namespace CommunityEventsMAUI.ViewModels
             return result;
         }
 
-        private async void GetEventNumb()
+        //Created a unique number for the event and image to prevent duplicate identifiers
+        private void GetEventNumb()
         {
-            ConnectToFirebase();
-            FirebaseResponse response = await client.GetAsync(@"Events");
-
-            try
-            {
-                Events[] result = response.ResultAs<Events[]>();
-                numEvents = result.Length;
-            }
-            catch
-            {
-                numEvents = 0;
-            }
+            GUiD = DateTime.Now.Second.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Hour.ToString() + DateTime.Now.Year.ToString() + Guid.NewGuid().ToString().GetHashCode().ToString("x");
         }
-        
+
+        //Uploads event to the database
         [RelayCommand]
         async void Upload()
         {
-
-            if (Title != null || Details != null || startTime != null || Date != null || State != null || City != null || Address != null)
+            try
             {
-                location = $"{Address}, {City} {State}";
-
-                GetEventNumb();
-
-                if (downloadUrl == null)
+                //Checks to see if there is any missing data and alerts the user if there is any missing data
+                if (Title != "" || Details != "" || startTime != "" || Date != "" || State != "" || City != "" || Address != "")
                 {
-                    downloadUrl = "https://firebasestorage.googleapis.com/v0/b/communityevents-128b1.appspot.com/o/grey.png?alt=media&token=411d50c5-d5f6-4b19-8a76-eb41e301c52f";
-                }
+                    //Runs to make the firebase client
+                    ConnectToFirebase();
 
-                try
-                {                 
+                    //Create a unique id for the created event
+                    GetEventNumb();
 
-
-                    Events events = new Events()
+                    //Sets the image to a grey square if no image is added
+                    if (downloadUrl == null)
                     {
-                        Details = Details,
-                        Image = downloadUrl,
-                        Name = Title,
-                        Location = location,
-                        Date = Date,
-                        StartTime = StartTime,
-                        EndTime = EndTime,
-                        EventNumb = numEvents
-                    };
+                        downloadUrl = "https://firebasestorage.googleapis.com/v0/b/communityevents-128b1.appspot.com/o/grey.png?alt=media&token=411d50c5-d5f6-4b19-8a76-eb41e301c52f";
+                    }
+                
+                    try
+                    {
+                        //Creates the updated event with the data that was added
+                        Events events = new Events()
+                        {
+                            Details = Details,
+                            Image = downloadUrl,
+                            Name = Title, 
+                            Address = Address,
+                            City = City,
+                            State = State,
+                            Date = Date,
+                            StartTime = StartTime,
+                            EndTime = EndTime,
+                            EventNumb = GUiD
+                        };
 
-                    await client.UpdateAsync($"User/{Userid}/Events/{numEvents}", events);
-                    await client.UpdateAsync($"Events/{numEvents}", events);
+
+                        //Creates a variable that allows the user to access the event on the user events page
+                        Events guid = new Events()
+                        {
+                            EventNumb = GUiD
+                        };
+
+                        //updates the data in the database
+                        await client.SetAsync($"User/{Userid}/Events/{GUiD}", guid);
+                        await client.SetAsync($"Events/{GUiD}", events);
+                    }
+                    finally
+                    {
+                        //Goes back to the user events page
+                        Shell.Current.Navigation.RemovePage(Shell.Current.CurrentPage);
+                    }
                 }
-                finally
+                else
                 {
-
+                    Shell.Current.DisplayAlert("Missing Info", "There is missing information for this event. Please enter data and retry", "OK");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Shell.Current.DisplayAlert("Missing Info", "There is missing information for this event. Please enter data and retry", "OK");
+                Shell.Current.DisplayAlert("Error!", ex.ToString(), "OK");
             }
+            
         }
     }
 }

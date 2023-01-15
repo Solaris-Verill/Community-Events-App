@@ -7881,13 +7881,13 @@ namespace CommunityEventsMAUI
 			public const int notify_panel_notification_icon_bg = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int splash = 2131165337;
+			public const int test_custom_background = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int test_custom_background = 2131165338;
+			public const int test_level_drawable = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int test_level_drawable = 2131165339;
+			public const int the_community = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
 			public const int tooltip_frame_dark = 2131165340;

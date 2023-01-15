@@ -8,5 +8,6 @@ namespace CommunityEventsMAUI.ViewModels
 {
     internal class ProfilePageModel
     {
+        //Unused - Profile page need completed
     }
 }

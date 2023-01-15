@@ -8,5 +8,6 @@ namespace CommunityEventsMAUI.ViewModels
 {
     internal class SettingsPageModel
     {
+        //Currently unused - Settings page needs completed
     }
 }

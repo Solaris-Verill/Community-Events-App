@@ -6,5 +6,5 @@ public partial class UserEventInfo : ContentPage
 	{
 		InitializeComponent();
 		BindingContext = viewModel;
-	}
+    }
 }

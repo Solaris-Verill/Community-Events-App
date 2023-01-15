@@ -1,6 +1,10 @@
-﻿using FireSharp;
+﻿using CommunityEventsMAUI.Models;
+using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
+using FireSharp.Response;
+using System;
+using System.Linq;
 
 namespace CommunityEventsMAUI.ViewModels
 {
@@ -8,17 +12,18 @@ namespace CommunityEventsMAUI.ViewModels
 
     public partial class EventInfoPageModel : BaseViewModel
     {
-        public Events selectedEvent;
-
+        //Unused - Map needs to be added
         IMap map;
         public EventInfoPageModel(IMap map)
         {
             this.map = map;
         }
 
+        //used to access event data
         [ObservableProperty]
         Events events;
 
+        //Firebase Configuration so that the app can connect to the Firebase server
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
@@ -27,6 +32,7 @@ namespace CommunityEventsMAUI.ViewModels
 
         IFirebaseClient client;
 
+        //Trys to connect and sets the firebase client to be used
         public void ConnectToFirebase()
         {
             try
@@ -41,30 +47,53 @@ namespace CommunityEventsMAUI.ViewModels
 
         [RelayCommand]
         async void Favorite()
-        {
-            ConnectToFirebase();
-
-
-
+        {            
             try 
-            { 
-                Events Event = new Events()
-                {
-                    Details = events.Details,
-                    Image = events.Image,
-                    Name = events.Name,
-                    Location = events.Location,
-                    Date = events.Date,
-                    StartTime = events.StartTime,
-                    EndTime = events.EndTime,
-                    EventNumb = events.EventNumb
-                };
-
-                await client.SetAsync($"User/{Auth.Userid}/Favorites/{Events.EventNumb}", Event);
-            }
-            catch
             {
-                Shell.Current.DisplayAlert("error", "please Try again", "OK");
+                ConnectToFirebase();
+
+                if (Users.Favorites != null)
+                {
+                    Events guid = new Events()
+                    {
+                        EventNumb = events.EventNumb
+                    };
+
+                    await client.SetAsync($"User/{Auth.Userid}/Favorites/{events.EventNumb}", guid);
+                }
+                else
+                {
+                    Users.Favorites = new();
+                    Events guid = new Events()
+                    {
+                        EventNumb = events.EventNumb
+                    };
+
+                    await client.SetAsync($"User/{Auth.Userid}/Favorites/{events.EventNumb}", guid);
+                }
+            }
+            catch ( Exception ex)
+            {
+                Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
+            }
+        }
+
+        [RelayCommand]
+        async void Unfavorite()
+        {
+            try
+            {
+                ConnectToFirebase();
+                bool answer = await Shell.Current.DisplayAlert("Delete", "Do you want to Unfavorite this event?", "OK", "Cancel");
+                if (answer == true)
+                {
+                    await client.DeleteAsync($"User/{Auth.Userid}/Favorites/{events.EventNumb}");
+                }
+                Shell.Current.Navigation.RemovePage(Shell.Current.CurrentPage);
+            }
+            catch (Exception ex)
+            {
+                Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
             }
         }
     }

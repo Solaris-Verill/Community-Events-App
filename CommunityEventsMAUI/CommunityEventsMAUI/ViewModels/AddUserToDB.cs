@@ -12,8 +12,8 @@ namespace CommunityEventsMAUI.ViewModels
 {
     public partial class AddUserToDB : Auth
     {
-        public string webApiKey = "AIzaSyBNKQZYQthu5ucaviE21YffjNpDBBT3lII";
 
+        //Firebase Configuration so that the app can connect to the Firebase server
         public IFirebaseConfig ifc = new FirebaseConfig()
         {
             AuthSecret = "Inule8rXhgsMUGuNGJw6zIoJaEdHpuIYZjeDo9BY",
@@ -22,6 +22,7 @@ namespace CommunityEventsMAUI.ViewModels
 
         IFirebaseClient client;
 
+        //Trys to connect and sets the firebase client to be used
         public void ConnectToFirebase()
         {
             try
@@ -30,14 +31,12 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch
             {
-                Shell.Current.DisplayAlert("Error!", "Unable to Connect. Try Again Later", "OK");
+                Shell.Current.DisplayAlert("Error!", "Unable To Connect. Try Again Later", "OK");
             }
         }
 
-        List<Events> favoritesList = new();
-        List<Events> Events = new();
-
-        public async void AddUser(string email, string uid)
+        //Adds the user to firebase
+        public async Task<bool> AddUser(string email, string uid)
         {
             try
             {
@@ -45,14 +44,15 @@ namespace CommunityEventsMAUI.ViewModels
                 Users user = new Users()
                 {
                     Username = email,
-                    Role = "User"
+                    Role = "User" 
                 };
 
                 await client.SetAsync($"User/{uid}/", user);
+                return true;
             }
-            finally
+            catch
             {
-
+                return false;
             }
         }
     }

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CommunityEventsMAUI.Views.EditEventPage"
+             xmlns:viewmodels="clr-namespace:CommunityEventsMAUI.ViewModels"
+             xmlns:models="clr-namespace:CommunityEventsMAUI.Models"
+             x:DataType="viewmodels:EditEventPageModel"
+             Title="Edit Event">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+            BackgroundColor="WhiteSmoke"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Frame
+                BackgroundColor="#1C375C"
+                Grid.Row="1"
+                Margin="0,0,0,-40"
+                BorderColor="WhiteSmoke"
+                CornerRadius="50"
+                HasShadow="True"
+                HeightRequest="700">
+                    <Grid
+                    BackgroundColor="#1C375C"
+                    Padding="20,50,20,0"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="20"
+                    VerticalOptions="FillAndExpand"
+                    ColumnDefinitions="*,*"
+                    RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                        <Label
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Margin="0,-15,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Input Event Details"
+                        TextColor="WhiteSmoke" />
+                        <Entry
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Margin="0,20,0,0"
+                        x:Name="TitleEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.Name}"
+                        Text="{Binding Title}"
+                        VerticalOptions="FillAndExpand"/>
+                        <Entry
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        x:Name="DetailsEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.Details}"
+                        Text="{Binding Details}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        x:Name="AddressEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.Address}"
+                        Text="{Binding Address}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        x:Name="CityEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.City}"
+                        Text="{Binding City}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        x:Name="StateEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.State}"
+                        Text="{Binding State}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        x:Name="StartTimeEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.StartTime}"
+                        Text="{Binding StartTime}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        x:Name="EndTimeEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.EndTime}"
+                        Text="{Binding EndTime}"
+                        VerticalOptions="FillAndExpand" />
+                        <Entry
+                        Grid.Row="7"
+                        x:Name="DateEntry"
+                        HorizontalOptions="FillAndExpand"
+                        PlaceholderColor="Grey"
+                        TextColor="WhiteSmoke"
+                        Placeholder="{Binding Events.Date}"
+                        Text="{Binding Date}"
+                        VerticalOptions="FillAndExpand" />
+                        <Button
+                        Grid.Row="8"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="WhiteSmoke"
+                        Command="{Binding PickAndShowCommand}"
+                        CornerRadius="20"
+                        Text="Pick Image" 
+                        TextColor="#1C375C"/>
+
+                        <Button
+                        Grid.Row="9"
+                        Grid.ColumnSpan="2"
+                        BackgroundColor="WhiteSmoke"
+                        Command="{Binding UploadCommand}"
+                        CornerRadius="20"
+                        Text="Upload Event" 
+                        TextColor="#1C375C"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

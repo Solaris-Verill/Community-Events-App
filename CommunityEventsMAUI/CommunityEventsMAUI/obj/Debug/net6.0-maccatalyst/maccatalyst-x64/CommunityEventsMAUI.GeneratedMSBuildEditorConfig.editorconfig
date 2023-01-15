@@ -33,6 +33,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Resour
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
 
+[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/AdminRegistrationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.AdminRegistrationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AdminRegistrationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AdminRegistrationPage.xaml
+
+[C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/EditEventPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.EditEventPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditEventPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditEventPage.xaml
+
 [C:/Users/Solar/Desktop/Community-Events-App/CommunityEventsMAUI/CommunityEventsMAUI/Views/EventCreationPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CommunityEventsMAUI.Views.EventCreationPage.xaml

@@ -28,8 +28,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<IMap>(Map.Default);
 
 		builder.Services.AddSingleton<EventService>();
-		builder.Services.AddSingleton<UserEventService>();
-		builder.Services.AddSingleton<FavoriteService>();
 
         builder.Services.AddSingleton<EventCreationPage>();
 		builder.Services.AddTransient<EventInfoPage>();
@@ -41,6 +39,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<SettingsPage>();
 		builder.Services.AddTransient<UserEventInfo>();
 		builder.Services.AddSingleton<UserEvents>();
+		builder.Services.AddTransient<EditEventPage>();
+		builder.Services.AddTransient<AdminRegistrationPage>();
 
 		builder.Services.AddTransient<HomePageModel>();
         builder.Services.AddTransient<EventCreationPageModel>();
@@ -52,6 +52,8 @@ public static class MauiProgram
         builder.Services.AddTransient<SettingsPageModel>();
 		builder.Services.AddTransient<UserEventsPageModel>();
 		builder.Services.AddTransient<UserEventsInfoPageModel>();
+		builder.Services.AddTransient<EditEventPageModel>();
+		builder.Services.AddTransient<AdminRegistrationPageModel>();
 
         return builder.Build();
 
