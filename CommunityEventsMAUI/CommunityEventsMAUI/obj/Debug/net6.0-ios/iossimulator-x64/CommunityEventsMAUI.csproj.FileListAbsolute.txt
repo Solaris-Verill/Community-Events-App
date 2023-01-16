@@ -306,4 +306,3 @@ C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsM
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-ios\iossimulator-x64\CommunityEventsMAUI.pdb
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-ios\iossimulator-x64\CommunityEventsMAUI.genruntimeconfig.cache
 C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-ios\iossimulator-x64\ref\CommunityEventsMAUI.dll
-C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Debug\net6.0-ios\iossimulator-x64\build-signature\signature

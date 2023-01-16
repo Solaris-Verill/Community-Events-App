@@ -1,0 +1,3 @@
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Release\net6.0-android\publish\thecommunity.thecommunity-Signed.aab
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Release\net6.0-android\publish\thecommunity.thecommunity.aab
+C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\bin\Release\net6.0-android\publish\thecommunity.thecommunity-Signed.apk

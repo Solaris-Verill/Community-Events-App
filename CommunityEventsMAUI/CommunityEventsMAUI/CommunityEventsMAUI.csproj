@@ -148,4 +148,8 @@
 
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadUnhandledDeviceExceptionCommunityEventsMAUIHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
+
+  <PropertyGroup Condition="$(TargetFramework.Contains('-android')) and '$(Configuration)' == 'Release'">
+  </PropertyGroup>
+  
 </Project>
