@@ -88,9 +88,16 @@ namespace CommunityEventsMAUI.ViewModels
 
                 _Events = _events;
 
-                foreach (var item in _Events.Values)
+                if (_Events != null)
                 {
-                    eventsList.Add(item);
+                    foreach (var item in _Events.Values)
+                    {
+                        eventsList.Add(item);
+                    }
+                }
+                else
+                {
+                    await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
                 }
             }
             catch (Exception ex)

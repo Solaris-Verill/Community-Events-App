@@ -86,7 +86,7 @@ namespace CommunityEventsMAUI.ViewModels
                     var serializedContent = JsonConvert.SerializeObject(content);
                     Preferences.Set("FreshFirebaseToken", serializedContent);
                     Shell.Current.Navigation.RemovePage(Shell.Current.CurrentPage);
-                    await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                    await Shell.Current.GoToAsync($"///{nameof(HomePage)}");
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +122,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch
             {
-                Shell.Current.DisplayAlert("Error!", "No Role Found. Setting as User", "OK");
+                await Shell.Current.DisplayAlert("Error!", "No Role Found. Setting as User", "OK");
 
                 Auth.Role = "User";
 

@@ -4,9 +4,9 @@
              x:Class="CommunityEventsMAUI.Views.HomePage"
              xmlns:models="clr-namespace:CommunityEventsMAUI.Models"
              xmlns:viewmodel="clr-namespace:CommunityEventsMAUI.ViewModels"
-             NavigatedTo="ContentPage_NavigatedTo"
              x:DataType="viewmodel:HomePageModel"
              Title="Dashboard">
+             <!--NavigatedTo="ContentPage_NavigatedTo"-->
     <Grid
         ColumnDefinitions="*,*"
         ColumnSpacing="5"

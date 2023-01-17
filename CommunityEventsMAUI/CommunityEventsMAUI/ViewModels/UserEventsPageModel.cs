@@ -95,9 +95,16 @@ namespace CommunityEventsMAUI.ViewModels
                     var _events = await eventService.GetEvents();
                     _Events = _events;
 
-                    foreach (var item in _Events.Values)
+                    if (_Events != null)
                     {
-                        eventsList.Add(item);
+                        foreach (var item in _Events.Values)
+                        {
+                            eventsList.Add(item);
+                        }
+                    }
+                    else
+                    {
+                        await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
                     }
                 }
                 catch (Exception ex)
@@ -141,10 +148,17 @@ namespace CommunityEventsMAUI.ViewModels
                     _Events = _events;
                     _UserEvents = _userEvents;
 
-                    foreach (var item in _UserEvents)
+                    if (_Events != null && _userEvents != null)
                     {
-                        Events events = _Events[item.Key];
-                        eventsList.Add(events);
+                        foreach (var item in _UserEvents)
+                        {
+                            Events events = _Events[item.Key];
+                            eventsList.Add(events);
+                        }
+                    }
+                    else
+                    {
+                        await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
                     }
                 }
                 catch (Exception ex)

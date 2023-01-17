@@ -1,7 +1,7 @@
 @string/appbar_scrolling_view_behavior;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\layout\fragment_backstack.xml
 @string/appbar_scrolling_view_behavior;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\layout\navigationlayout.xml
-adaptive-icon;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 adaptive-icon;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
+adaptive-icon;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 alpha;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\152\jl\res\anim\enterfromleft.xml
 alpha;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\152\jl\res\anim\exittoleft.xml
 alpha;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\anim\nav_default_enter_anim.xml
@@ -15,8 +15,8 @@ androidx.fragment.app.FragmentContainerView;C:\Users\Solar\Desktop\Community-Eve
 androidx.fragment.app.FragmentContainerView;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\layout\navigationlayout.xml
 attr;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\153\jl\res\values\attrs.xml
 attr;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\values\attr.xml
-background;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 background;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
+background;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 cache-path;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\156\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 color;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\values\colors.xml
 color;obj\Release\net6.0-android\res\resources\values\maui_colors.xml
@@ -30,14 +30,14 @@ declare-styleable;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAU
 declare-styleable;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\values\attr.xml
 external-cache-path;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\156\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\156\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
-foreground;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 foreground;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
+foreground;obj\Release\net6.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
 item;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\153\jl\res\values\styles.xml
 item;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\drawable\maui_splash.xml
 item;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\values\styles.xml
 item;obj\Release\net6.0-android\res\resources\drawable\maui_splash_image.xml
-layer-list;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\drawable\maui_splash_image.xml
 layer-list;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\drawable\maui_splash.xml
+layer-list;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\155\jl\res\drawable\maui_splash_image.xml
 layer-list;obj\Release\net6.0-android\res\resources\drawable\maui_splash_image.xml
 microsoft.maui.controls.platform.compatibility.ShellFlyoutLayout;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\152\jl\res\layout\flyoutcontent.xml
 paths;C:\Users\Solar\Desktop\Community-Events-App\CommunityEventsMAUI\CommunityEventsMAUI\obj\Release\net6.0-android\lp\156\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml

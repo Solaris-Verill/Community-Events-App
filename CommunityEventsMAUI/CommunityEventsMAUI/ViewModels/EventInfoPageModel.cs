@@ -74,7 +74,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch ( Exception ex)
             {
-                Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
+                await Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
             }
         }
 
@@ -93,7 +93,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch (Exception ex)
             {
-                Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
+                await Shell.Current.DisplayAlert("error", ex.ToString(), "OK");
             }
         }
     }

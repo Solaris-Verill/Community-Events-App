@@ -98,7 +98,7 @@ namespace CommunityEventsMAUI.Services
             }
             catch
             {
-                Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
+                await Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
 
                 return await Task.FromResult(usereventsList);
             }
@@ -126,7 +126,7 @@ namespace CommunityEventsMAUI.Services
             }
             catch
             {
-                Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
+                await Shell.Current.DisplayAlert("Error!", "No Events Found", "OK");
 
                 return await Task.FromResult(favoritesList);
             }

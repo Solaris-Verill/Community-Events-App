@@ -90,7 +90,7 @@ namespace CommunityEventsMAUI.ViewModels
             catch (Exception ex)
             {
                 // The user canceled or something went wrong
-                Shell.Current.DisplayAlert("Error", $"{ex}", "OK");
+                await Shell.Current.DisplayAlert("Error", $"{ex}", "OK");
             }
 
             return result;
@@ -159,12 +159,12 @@ namespace CommunityEventsMAUI.ViewModels
                 }
                 else
                 {
-                    Shell.Current.DisplayAlert("Missing Info", "There is missing information for this event. Please enter data and retry", "OK");
+                    await Shell.Current.DisplayAlert("Missing Info", "There is missing information for this event. Please enter data and retry", "OK");
                 }
             }
             catch (Exception ex)
             {
-                Shell.Current.DisplayAlert("Error!", ex.ToString(), "OK");
+                await Shell.Current.DisplayAlert("Error!", ex.ToString(), "OK");
             }
             
         }

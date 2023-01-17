@@ -80,17 +80,24 @@ namespace CommunityEventsMAUI.ViewModels
                 _Events = _events;
                 _Favorites = _favorites;
 
-                foreach (var item in _Favorites)
+                if (_Events != null && _Favorites!= null)
                 {
-                    try
+                    foreach (var item in _Favorites)
                     {
-                        Events events = _Events[item.Key];
-                        eventsList.Add(events);
+                        try
+                        {
+                            Events events = _Events[item.Key];
+                            eventsList.Add(events);
+                        }
+                        catch (Exception ex)
+                        {
+                            Trace.WriteLine(ex);
+                        }
                     }
-                    catch(Exception ex)
-                    {
-                        Trace.WriteLine(ex);
-                    }
+                }
+                else
+                {
+                    await Shell.Current.DisplayAlert("Error!", "Unable to Access Events", "OK");
                 }
             }
             catch (Exception ex)

@@ -77,103 +77,103 @@ map_aname.14:
 
 	.type	map_aname.15, @object
 map_aname.15:
-	.asciz	"CommunityEventsMAUI"
-	.size	map_aname.15, 20
+	.asciz	"Xamarin.AndroidX.ViewPager"
+	.size	map_aname.15, 27
 
 	.type	map_aname.16, @object
 map_aname.16:
-	.asciz	"Xamarin.AndroidX.ViewPager"
-	.size	map_aname.16, 27
+	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModelSavedState"
+	.size	map_aname.16, 47
 
 	.type	map_aname.17, @object
 map_aname.17:
-	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModelSavedState"
-	.size	map_aname.17, 47
+	.asciz	"Xamarin.AndroidX.AppCompat"
+	.size	map_aname.17, 27
 
 	.type	map_aname.18, @object
 map_aname.18:
-	.asciz	"Xamarin.AndroidX.AppCompat"
-	.size	map_aname.18, 27
+	.asciz	"Xamarin.AndroidX.DrawerLayout"
+	.size	map_aname.18, 30
 
 	.type	map_aname.19, @object
 map_aname.19:
-	.asciz	"Xamarin.AndroidX.DrawerLayout"
-	.size	map_aname.19, 30
+	.asciz	"Microsoft.Maui"
+	.size	map_aname.19, 15
 
 	.type	map_aname.20, @object
 map_aname.20:
-	.asciz	"Microsoft.Maui"
-	.size	map_aname.20, 15
+	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
+	.size	map_aname.20, 46
 
 	.type	map_aname.21, @object
 map_aname.21:
-	.asciz	"Xamarin.AndroidX.AppCompat.AppCompatResources"
-	.size	map_aname.21, 46
+	.asciz	"Xamarin.AndroidX.Collection"
+	.size	map_aname.21, 28
 
 	.type	map_aname.22, @object
 map_aname.22:
-	.asciz	"Xamarin.AndroidX.Collection"
-	.size	map_aname.22, 28
+	.asciz	"Xamarin.AndroidX.Navigation.Fragment"
+	.size	map_aname.22, 37
 
 	.type	map_aname.23, @object
 map_aname.23:
-	.asciz	"Xamarin.AndroidX.Navigation.Fragment"
-	.size	map_aname.23, 37
+	.asciz	"Xamarin.Kotlin.StdLib"
+	.size	map_aname.23, 22
 
 	.type	map_aname.24, @object
 map_aname.24:
-	.asciz	"Xamarin.Kotlin.StdLib"
-	.size	map_aname.24, 22
+	.asciz	"Xamarin.AndroidX.CardView"
+	.size	map_aname.24, 26
 
 	.type	map_aname.25, @object
 map_aname.25:
-	.asciz	"Xamarin.AndroidX.CardView"
-	.size	map_aname.25, 26
+	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
+	.size	map_aname.25, 41
 
 	.type	map_aname.26, @object
 map_aname.26:
-	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
-	.size	map_aname.26, 41
+	.asciz	"Microsoft.Maui.Controls"
+	.size	map_aname.26, 24
 
 	.type	map_aname.27, @object
 map_aname.27:
-	.asciz	"Microsoft.Maui.Controls"
+	.asciz	"Xamarin.AndroidX.Loader"
 	.size	map_aname.27, 24
 
 	.type	map_aname.28, @object
 map_aname.28:
-	.asciz	"Xamarin.AndroidX.Loader"
-	.size	map_aname.28, 24
+	.asciz	"Xamarin.AndroidX.ViewPager2"
+	.size	map_aname.28, 28
 
 	.type	map_aname.29, @object
 map_aname.29:
-	.asciz	"Xamarin.AndroidX.ViewPager2"
-	.size	map_aname.29, 28
+	.asciz	"ReactiveUI"
+	.size	map_aname.29, 11
 
 	.type	map_aname.30, @object
 map_aname.30:
-	.asciz	"ReactiveUI"
-	.size	map_aname.30, 11
+	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
+	.size	map_aname.30, 34
 
 	.type	map_aname.31, @object
 map_aname.31:
-	.asciz	"Xamarin.AndroidX.Lifecycle.Common"
-	.size	map_aname.31, 34
+	.asciz	"Xamarin.AndroidX.Navigation.UI"
+	.size	map_aname.31, 31
 
 	.type	map_aname.32, @object
 map_aname.32:
-	.asciz	"Xamarin.AndroidX.Navigation.UI"
-	.size	map_aname.32, 31
+	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
+	.size	map_aname.32, 37
 
 	.type	map_aname.33, @object
 map_aname.33:
-	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
-	.size	map_aname.33, 37
+	.asciz	"Xamarin.AndroidX.CustomView"
+	.size	map_aname.33, 28
 
 	.type	map_aname.34, @object
 map_aname.34:
-	.asciz	"Xamarin.AndroidX.CustomView"
-	.size	map_aname.34, 28
+	.asciz	"CommunityEventsMAUI"
+	.size	map_aname.34, 20
 
 	.type	map_aname.35, @object
 map_aname.35:

@@ -20,7 +20,7 @@ namespace CommunityEventsMAUI.Services
                 Admin.adminID = "";
 
                 Shell.Current.Navigation.RemovePage(Shell.Current.CurrentPage);
-                await Shell.Current.GoToAsync($"///{nameof(LoginPage)}");
+                await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
 
             }
             catch(Exception ex)

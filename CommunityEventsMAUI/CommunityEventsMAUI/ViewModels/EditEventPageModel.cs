@@ -95,7 +95,7 @@ namespace CommunityEventsMAUI.ViewModels
             catch (Exception ex)
             {
                 // The user canceled or something went wrong
-                Shell.Current.DisplayAlert("Error", "Please Try Again", "OK");
+                await Shell.Current.DisplayAlert("Error", "Please Try Again", "OK");
             }
 
             return result;
@@ -199,7 +199,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch (Exception ex)
             {
-                Shell.Current.DisplayAlert("Error!", ex.ToString(), "OK");
+                await Shell.Current.DisplayAlert("Error!", ex.ToString(), "OK");
             }
 
         }

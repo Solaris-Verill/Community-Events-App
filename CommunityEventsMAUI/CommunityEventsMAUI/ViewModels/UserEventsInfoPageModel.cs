@@ -64,7 +64,7 @@ namespace CommunityEventsMAUI.ViewModels
             }
             catch
             {
-                Shell.Current.DisplayAlert("error", "please Try again", "OK");
+                await Shell.Current.DisplayAlert("error", "please Try again", "OK");
             }
         }
 
